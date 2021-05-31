@@ -1,0 +1,31 @@
+﻿@model List<Announcement>
+@{ ViewBag.Title = "Announcement Details"; }
+
+<div class="detailscolor">
+    <div class="back">
+        <strong>
+            @Html.ActionLink("Back", "Index")
+        </strong>
+    </div>
+
+    <h2 align="center">@Model[0].Title</h2>
+
+    <h6 align="center">@Model[0].Description</h6>
+
+    <h6 align="right">@Model[0].Date</h6>
+
+    </br>
+
+    <h1 align="center">Top @(Model.Count-1) Announcements</strong></h1>
+
+    <ol>
+
+        @for (int i = 1; i < Model.Count; i++)
+        {
+            <li><h1>@Model[i].Title</h1></li>
+
+        }
+
+    </ol>
+</div>
+
